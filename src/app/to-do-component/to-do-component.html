@@ -2,6 +2,7 @@
   <div class="todo-card">
     <header class="todo-header">
       <h1>My Tasks</h1>
+      <p class="header-sub">Stay organised, get things done.</p>
     </header>
 
     <div class="stats-container">
@@ -15,7 +16,7 @@
       </div>
       <div class="stat-box">
         <span class="stat-value">{{ stats().completed }}</span>
-        <span class="stat-label">Completed</span>
+        <span class="stat-label">Done</span>
       </div>
     </div>
 
@@ -25,39 +26,22 @@
           type="text"
           [(ngModel)]="newTaskTitle"
           name="newTask"
-          placeholder="What needs to be done?"
+          placeholder="Add a new task..."
           autocomplete="off"
         />
-        <button type="submit" class="add-btn" [disabled]="!newTaskTitle.trim()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        </button>
+        <button type="submit" class="add-btn" [disabled]="!newTaskTitle.trim()">+</button>
       </div>
     </form>
 
     <div class="filter-tabs">
       <button [class.active]="filter() === 'all'" (click)="setFilter('all')">All</button>
       <button [class.active]="filter() === 'active'" (click)="setFilter('active')">Active</button>
-      <button [class.active]="filter() === 'completed'" (click)="setFilter('completed')">
-        Completed
-      </button>
+      <button [class.active]="filter() === 'completed'" (click)="setFilter('completed')">Completed</button>
     </div>
 
     <div class="todo-list">
       <div class="empty-state" *ngIf="filteredTodos().length === 0">
-        <p>No tasks here!</p>
+        <p>Nothing here yet!</p>
       </div>
 
       <div
@@ -70,26 +54,7 @@
           <span class="checkmark"></span>
         </label>
         <span class="todo-title">{{ todo.title }}</span>
-        <button class="delete-btn" (click)="deleteTodo(todo.id)" aria-label="Delete">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path
-              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-            ></path>
-            <line x1="10" y1="11" x2="10" y2="17"></line>
-            <line x1="14" y1="11" x2="14" y2="17"></line>
-          </svg>
-        </button>
+        <button class="delete-btn" (click)="deleteTodo(todo.id)" aria-label="Delete task">&#10005;</button>
       </div>
     </div>
   </div>

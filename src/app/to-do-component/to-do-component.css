@@ -7,43 +7,42 @@
 }
 
 .todo-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
   padding: 2.5rem;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.todo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .todo-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   text-align: center;
 }
 
 .todo-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  background: linear-gradient(to right, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.header-sub {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 400;
 }
 
 .stats-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
+  margin-bottom: 1.75rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
   padding: 1rem;
 }
 
@@ -55,176 +54,176 @@
 }
 
 .stat-box:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .stat-value {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #9ca3af;
-  margin-top: 0.25rem;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-top: 0.3rem;
 }
 
 .add-todo-form {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .input-wrapper {
-  position: relative;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .input-wrapper input {
-  width: 100%;
-  padding: 1rem 3.5rem 1rem 1.5rem;
-  border-radius: 9999px;
-  border: none;
-  background: rgba(255, 255, 255, 0.9);
-  color: #1f2937;
-  font-size: 1rem;
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  color: #f3f4f6;
+  font-size: 0.95rem;
+  font-family: inherit;
   outline: none;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: #6b7280;
 }
 
 .input-wrapper input:focus {
-  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  border-color: rgba(139, 92, 246, 0.6);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .add-btn {
-  position: absolute;
-  right: 0.5rem;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  background: #7c3aed;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  border-radius: 10px;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.6rem;
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
 }
 
 .add-btn:hover:not(:disabled) {
-  transform: scale(1.05);
+  background: #6d28d9;
+  transform: translateY(-1px);
 }
 
 .add-btn:active:not(:disabled) {
-  transform: scale(0.95);
+  transform: translateY(0);
 }
 
 .add-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.35;
   cursor: not-allowed;
-  filter: grayscale(100%);
 }
 
 .filter-tabs {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 0.25rem;
-  border-radius: 9999px;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .filter-tabs button {
   flex: 1;
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #9ca3af;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
   font-weight: 500;
+  font-family: inherit;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .filter-tabs button.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: rgba(124, 58, 237, 0.3);
+  border-color: rgba(124, 58, 237, 0.5);
+  color: #c4b5fd;
 }
 
 .filter-tabs button:hover:not(.active) {
   color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .todo-list {
-  max-height: 400px;
+  max-height: 380px;
   overflow-y: auto;
-  padding-right: 0.5rem;
+  padding-right: 0.25rem;
 }
 
 .todo-list::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .todo-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  background: transparent;
 }
 
 .todo-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-}
-
-.todo-list::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
-  transition: all 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s ease;
 }
 
 .todo-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .todo-item.completed {
-  opacity: 0.7;
+  opacity: 0.55;
 }
 
 .todo-item.completed .todo-title {
   text-decoration: line-through;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .todo-title {
   flex: 1;
-  font-size: 1rem;
-  margin: 0 1rem;
-  color: #fff;
+  font-size: 0.95rem;
+  margin: 0 0.75rem;
+  color: #e5e7eb;
   word-break: break-word;
-  transition: color 0.2s ease;
 }
 
 .checkbox-container {
   display: block;
   position: relative;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .checkbox-container input {
@@ -239,17 +238,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 24px;
-  width: 24px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  height: 22px;
+  width: 22px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   transition: all 0.2s ease;
 }
 
 .checkbox-container:hover input ~ .checkmark {
-  border-color: #60a5fa;
-  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #a78bfa;
 }
 
 .checkbox-container input:checked ~ .checkmark {
@@ -268,10 +266,10 @@
 }
 
 .checkbox-container .checkmark:after {
-  left: 7px;
-  top: 3px;
+  left: 6px;
+  top: 2px;
   width: 4px;
-  height: 10px;
+  height: 9px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -280,35 +278,28 @@
 .delete-btn {
   background: transparent;
   border: none;
-  color: #ef4444;
+  color: #6b7280;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
   opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
 }
 
 .todo-item:hover .delete-btn {
   opacity: 1;
-  transform: scale(1);
 }
 
 .delete-btn:hover {
-  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
 }
 
 .empty-state {
   text-align: center;
-  padding: 3rem 1rem;
-  color: #9ca3af;
-}
-
-.empty-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
+  padding: 2.5rem 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
